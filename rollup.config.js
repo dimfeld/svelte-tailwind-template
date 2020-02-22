@@ -1,5 +1,5 @@
 import svelte from 'rollup-plugin-svelte';
-import resolve from 'rollup-plugin-node-resolve';
+import resolve from '@rollup/plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
@@ -14,21 +14,21 @@ export default {
     sourcemap: true,
     format: 'iife',
     name: 'app',
-    file: 'public/bundle.js'
+    file: 'public/bundle.js',
   },
   plugins: [
     svelte({
       preprocess: autoPreprocess({
-        postcss: true
+        postcss: true,
       }),
       // enable run-time checks when not in production
       dev: !production,
-      css: css => {
+      css: (css) => {
         css.write('public/components.css');
-      }
+      },
     }),
     postcss({
-      extract: 'public/utils.css'
+      extract: 'public/utils.css',
     }),
 
     // If you have external dependencies installed from
@@ -45,9 +45,9 @@ export default {
 
     // If we're building for production (npm run build
     // instead of npm run dev), minify
-    production && terser()
+    production && terser(),
   ],
   watch: {
-    clearScreen: false
-  }
+    clearScreen: false,
+  },
 };

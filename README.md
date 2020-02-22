@@ -3,15 +3,15 @@
 ## Get started
 
 ```bash
-git clone https://github.com/muhajirdev/svelte-tailwind-template
-cd svelte-tailwind-template
-npm install
+npx degit https://github.com/dimfeld/svelte-tailwind-template DIRNAME
+cd DIRNAME
+yarn
 ```
 
 ...then start [Rollup](https://rollupjs.org):
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
