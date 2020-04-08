@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html<%= htmlAttributes %>>
   <head>
     <meta charset="utf8" />
     <meta name="viewport" content="width=device-width" />
 
-    <title>Svelte app</title>
+    <title><%= title %></title>
 
     <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="stylesheet" href="/components.css" />
-    <link rel="stylesheet" href="/utils.css" />
+    <%= links %>
   </head>
 
   <body>
-    <script src="bundle.js"></script>
+    <%= scripts %>
   </body>
 </html>

@@ -1,8 +1,5 @@
 .DS_Store
 .vscode
 node_modules
-public/bundle.*
-
-public/components.css
-public/components.css.map
-public/utils.css
+yarn-error.log
+build

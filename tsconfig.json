@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "noEmit": true,
+    "preserveConstEnums": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "outDir": "tsout"
+  },
+  "include": ["src/**/*.ts", "src/**/*.js"]
+}

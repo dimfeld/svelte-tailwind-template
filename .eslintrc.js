@@ -4,27 +4,26 @@ module.exports = {
     es6: true,
     node: true,
   },
+  parser: '@typescript-eslint/parser',
   parserOptions: {
+    project: 'tsconfig.json',
     ecmaVersion: 2019,
     sourceType: 'module',
   },
+  overrides: [
+    {
+      files: ['**/*.svelte'],
+      parser: 'espree',
+      processor: 'svelte3/svelte3',
+    },
+  ],
+  plugins: ['@typescript-eslint/eslint-plugin', 'svelte3'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'prettier/@typescript-eslint',
   ],
-  plugins: ['svelte3'],
-  overrides: [
-    {
-      files: ['**/*.svelte'],
-      processor: 'svelte3/svelte3',
-      settings: {
-        'svelte3/ignore-styles': (attrs) => attrs.type === 'text/postcss',
-      },
-    },
-  ],
   rules: {
-    eqeqeq: 'error',
-    'no-unused-vars': 'warn',
+    'no-unused-vars': ['warn', { args: 'none' }],
   },
 };
